@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Olympic Dashboards</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; background-color: #f4f7f6; }
+        header { background-color: #1a8a73; color: white; padding: 15px 30px; display: flex; justify-content: space-between; align-items: center; }
+        header h1 { margin: 0; font-size: 20px; }
+        nav a { color: white; text-decoration: none; margin-left: 15px; font-weight: bold; }
+        .container { max-width: 1400px; margin: 30px auto; padding: 0 20px; }
+        .viz-card { background: white; border-radius: 8px; padding: 20px; margin-bottom: 30px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+        .viz-card h2 { color: #1a8a73; margin-top: 0; border-bottom: 2px solid #f0f0f0; padding-bottom: 10px; }
+        .tableauContainer { width: 100%; height: 850px; }
+    </style>
+
+    <!-- Tableau JavaScript API v2 -->
+    <script type="text/javascript" src="https://public.tableau.com/javascripts/api/tableau-2.min.js"></script>
+    <script type="text/javascript">
+        function initViz() {
+            var options = {
+                hideTabs: true,
+                width: "100%",
+                height: "850px"
+            };
+
+            new tableau.Viz(document.getElementById("viz1"), "{{ links.dash1 }}", options);
+            new tableau.Viz(document.getElementById("viz2"), "{{ links.dash2 }}", options);
+            new tableau.Viz(document.getElementById("viz3"), "{{ links.dash3 }}", options);
+        }
+
+        document.addEventListener("DOMContentLoaded", initViz);
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Global Olympic Dashboards</h1>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/dashboard">Dashboards</a>
+            <a href="/story">Story</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="viz-card">
+            <h2>Dashboard 1: Global Performance Analysis</h2>
+            <div id="viz1" class="tableauContainer"></div>
+        </div>
+
+        <div class="viz-card">
+            <h2>Dashboard 2: Athlete & Regional Insights</h2>
+            <div id="viz2" class="tableauContainer"></div>
+        </div>
+
+        <div class="viz-card">
+            <h2>Dashboard 3: Host & Investment Insights</h2>
+            <div id="viz3" class="tableauContainer"></div>
+        </div>
+    </div>
+</body>
+</html>

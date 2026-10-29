@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Olympic Stories</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; background-color: #f4f7f6; }
+        header { background-color: #1a8a73; color: white; padding: 15px 30px; display: flex; justify-content: space-between; align-items: center; }
+        header h1 { margin: 0; font-size: 20px; }
+        nav a { color: white; text-decoration: none; margin-left: 15px; font-weight: bold; }
+        .container { max-width: 1400px; margin: 30px auto; padding: 0 20px; }
+        .viz-card { background: white; border-radius: 8px; padding: 20px; margin-bottom: 30px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+        .viz-card h2 { color: #1a8a73; margin-top: 0; border-bottom: 2px solid #f0f0f0; padding-bottom: 10px; }
+        .tableauContainer { width: 100%; height: 800px; }
+    </style>
+
+    <!-- Tableau JavaScript API v2 -->
+    <script type="text/javascript" src="https://public.tableau.com/javascripts/api/tableau-2.min.js"></script>
+    <script type="text/javascript">
+        function initViz() {
+            var options = {
+                hideTabs: true,
+                width: "100%",
+                height: "800px"
+            };
+
+            new tableau.Viz(document.getElementById("storyViz1"), "{{ links.story1 }}", options);
+            new tableau.Viz(document.getElementById("storyViz2"), "{{ links.story2 }}", options);
+            new tableau.Viz(document.getElementById("storyViz3"), "{{ links.story3 }}", options);
+            new tableau.Viz(document.getElementById("storyViz4"), "{{ links.story4 }}", options);
+        }
+
+        document.addEventListener("DOMContentLoaded", initViz);
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Olympic Narrative Story</h1>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/dashboard">Dashboards</a>
+            <a href="/story">Story</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="viz-card">
+            <h2>Scene 1: Global Performance & Trends</h2>
+            <div id="storyViz1" class="tableauContainer"></div>
+        </div>
+
+        <div class="viz-card">
+            <h2>Scene 2: Athlete & Regional Insights</h2>
+            <div id="storyViz2" class="tableauContainer"></div>
+        </div>
+
+        <div class="viz-card">
+            <h2>Scene 3: Host Advantage & Investment Patterns</h2>
+            <div id="storyViz3" class="tableauContainer"></div>
+        </div>
+
+        <div class="viz-card">
+            <h2>Scene 4: Key Findings & Conclusion</h2>
+            <div id="storyViz4" class="tableauContainer"></div>
+        </div>
+    </div>
+</body>
+</html>

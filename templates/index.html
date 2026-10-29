@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Olympic Performance Analysis</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; background-color: #f4f7f6; color: #333; }
+        header { background-color: #1a8a73; color: white; padding: 20px 40px; display: flex; justify-content: space-between; align-items: center; }
+        header h1 { margin: 0; font-size: 24px; }
+        nav a { color: white; text-decoration: none; margin-left: 20px; font-weight: bold; font-size: 16px; }
+        nav a:hover { text-decoration: underline; }
+        .hero { text-align: center; padding: 60px 20px; background: white; border-bottom: 1px solid #e0e0e0; }
+        .hero h2 { color: #1a8a73; font-size: 32px; margin-bottom: 10px; }
+        .hero p { font-size: 18px; color: #666; max-width: 800px; margin: 0 auto 30px; }
+        .btn { background-color: #1a8a73; color: white; padding: 12px 25px; text-decoration: none; border-radius: 5px; font-weight: bold; display: inline-block; margin: 5px; }
+        .btn:hover { background-color: #146e5c; }
+        .container { max-width: 1200px; margin: 40px auto; padding: 0 20px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+        .card { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); border-left: 5px solid #1a8a73; }
+        .card h3 { margin-top: 0; color: #1a8a73; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Olympic Analytics Portal</h1>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/dashboard">Dashboards</a>
+            <a href="/story">Story</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h2>Global Olympic Sports Performance Analysis (1992–2022)</h2>
+        <p>Explore 30 years of Olympic history across 17 Games editions, 135 countries, and 68 sports disciplines.</p>
+        <a href="/dashboard" class="btn">View Interactive Dashboards</a>
+        <a href="/story" class="btn" style="background-color: #d97706;">Explore Narrative Story</a>
+    </section>
+
+    <div class="container">
+        <h2>Key Stakeholders Served</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>Elena Rostova</h3>
+                <p><strong>High-Performance Director</strong></p>
+                <p>Evaluates sport efficiency relative to delegation size and host nation advantages.</p>
+            </div>
+            <div class="card">
+                <h3>Marcus Vance</h3>
+                <p><strong>Sports Analytics Consultant</strong></p>
+                <p>Monitors long-term country dominance trends and regional medal distributions.</p>
+            </div>
+            <div class="card">
+                <h3>Dr. Aris Thorne</h3>
+                <p><strong>Sports Policy Researcher</strong></p>
+                <p>Analyzes delegation growth, host country boosts, and multi-decade Olympic adoption.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
